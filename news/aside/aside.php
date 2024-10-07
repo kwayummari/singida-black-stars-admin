@@ -15,63 +15,13 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-            <a href="../carousel/">
-              <i class="bi bi-circle"></i><span>Carousel</span>
+            <a href="../categories/">
+              <i class="bi bi-circle"></i><span>Categories</span>
             </a>
           </li>
           <li>
-            <a href="../league/">
-              <i class="bi bi-circle"></i><span>League</span>
-            </a>
-          </li>
-          <li>
-            <a href="../jezi/">
-              <i class="bi bi-circle"></i><span>Kit</span>
-            </a>
-          </li>
-          <li>
-            <a href="../players/">
-              <i class="bi bi-circle"></i><span>Players</span>
-            </a>
-          </li>
-          <li>
-            <a href="../staff/">
-              <i class="bi bi-circle"></i><span>Staff</span>
-            </a>
-          </li>
-          <li>
-            <a href="../shop/">
-              <i class="bi bi-circle"></i><span>Shop</span>
-            </a>
-          </li>
-          <li>
-            <a href="../next/">
-              <i class="bi bi-circle"></i><span>Next Match</span>
-            </a>
-          </li>
-          <li>
-            <a href="../previous/">
-              <i class="bi bi-circle"></i><span>Previous Match</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php">
+            <a href="../news/">
               <i class="bi bi-circle"></i><span>News</span>
-            </a>
-          </li>
-          <li>
-            <a href="../documentary/">
-              <i class="bi bi-circle"></i><span>Documentary</span>
-            </a>
-          </li>
-          <li>
-            <a href="../gallery/">
-              <i class="bi bi-circle"></i><span>Gallery</span>
-            </a>
-          </li>
-          <li>
-            <a href="../loan/">
-              <i class="bi bi-circle"></i><span>Loan Watch</span>
             </a>
           </li>
         </ul>

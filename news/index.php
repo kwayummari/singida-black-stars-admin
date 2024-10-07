@@ -3,7 +3,7 @@ session_start();
 $user_id = $_SESSION['id'];
 $status = $_SESSION['role'];
 $username = $_SESSION['name'];
-$connect=$db =mysqli_connect('localhost','u750269652_singida','Gudboy24@','u750269652_singida')
+$connect=$db =mysqli_connect('localhost','root','','singidaBlackStars')
 or die("connection Failed");
 
   $query="select * from news";
@@ -11,24 +11,13 @@ or die("connection Failed");
 
  ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <?php include "head/head.php" ?>
-
 <body>
   <?php include "../header/header.php" ?>
   <?php include "aside/aside.php" ?>
-
   <main id="main" class="main">
-
-    
-
-            
-
             <!-- Recent Sales -->
             <div class="col-12">
               <div class="card recent-sales overflow-auto">
