@@ -1,33 +1,36 @@
 <?php
-$connect=$db =mysqli_connect('localhost','u750269652_singida','Gudboy24@','u750269652_singida')
-or die("connection Failed");
+ob_start(); // Start output buffering
+include '../connection/index.php';
+
 if (isset($_POST['submit'])) {
-    $date=$_POST['date'];
-    $caption=$_POST['caption'];
-    $news=$_POST['news'];
-    $author='Singida Big Stars';
-
-
-  $file = $_FILES["cv"]["name"];
-   $path = $_FILES['cv']['tmp_name'];
-   $folder = "../cv/";
-   $final_name = str_replace(" ", "-", $file);
-   
-//   var_dump ($final_name);
-
-  $query="INSERT INTO news (date,caption,news,author,image)
-    VALUES('$date', '$caption', '$news', '$author', '$final_name')";
-
-     
-     $insert=mysqli_query($connect,$query);
-     
-
-  if($insert) {
-    move_uploaded_file($path, $folder . $final_name);
-    echo "News Added Successfully";
-} else {
-    echo "Failed To Add News";
+    $sellerId = $_SESSION['userId'];
+    $name = mysqli_real_escape_string($connect, trim($_POST['name']));
+    $amount = mysqli_real_escape_string($connect, trim($_POST['amount']));
+    $caption = mysqli_real_escape_string($connect, trim($_POST['caption']));
+    $description = mysqli_real_escape_string($connect, trim($_POST['description']));
+    $categoryId = mysqli_real_escape_string($connect, trim($_POST['category']));
+    if (isset($_FILES["cv"]) && $_FILES["cv"]["error"] == 0) {
+        $file = $_FILES["cv"]["name"];
+        $path = $_FILES['cv']['tmp_name'];
+        $folder = "../../assets/images/";
+        $final_name = str_replace(" ", "-", $file);
+        $query = $connect->prepare("INSERT INTO products (name, amount, caption, description, categoryId, sellerId, status, image) VALUES (?, ?, ?, ?, ?, ?, '0', ?)");
+        $query->bind_param("ssssiss", $name, $amount, $caption, $description, $categoryId, $sellerId, $final_name);
+        if ($query->execute()) {
+            $productId = $query->insert_id;
+            if (move_uploaded_file($path, $folder . $final_name)) {
+                echo "<meta http-equiv='refresh' content='0;url=gallery.php?productId=$productId'>";
+                exit;
+            } else {
+                echo "Failed to upload image.";
+            }
+        } else {
+            echo "Failed to add product: " . $query->error;
+        }
+        $query->close();
+    } else {
+        echo "Invalid file upload.";
+    }
 }
-
-}
- ?>
+$connect->close();
+ob_end_flush();

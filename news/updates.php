@@ -1,6 +1,8 @@
 <?php
-$connect=$db =mysqli_connect('localhost','u750269652_singida','Gudboy24@','u750269652_singida')
-or die("connection Failed");
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+include '../connection/index.php';
 if (isset($_POST['submit'])) {
     $id=$_POST['id'];
     $date=$_POST['date'];
@@ -15,7 +17,7 @@ if (isset($_POST['submit'])) {
    $final_name = str_replace(" ", "-", $file);
    
 
-    $query = "UPDATE news SET date='$date', caption = '$caption', news = '$news', image='$final_name' WHERE id = '$id'";
+    $query = "UPDATE events SET date='$date', caption = '$caption', news = '$news', image='$final_name' WHERE id = '$id'";
 
      
      $insert=mysqli_query($connect,$query);
