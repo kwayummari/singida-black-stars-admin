@@ -14,7 +14,7 @@ $userId = $_SESSION['userId'];
 include '../connection/index.php';
 
 // Query to select data from the categories table
-$query = "SELECT id, name, image, description FROM categories";
+$query = "SELECT id, name, description FROM categories";
 $stmt = $connect->prepare($query);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -38,7 +38,6 @@ $result = $stmt->get_result();
             <thead>
               <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Image</th>
                 <th scope="col">Description</th>
                 <th scope="col">Action</th>
               </tr>
@@ -50,7 +49,6 @@ $result = $stmt->get_result();
               ?>
                 <tr>
                   <td><?php echo $row['name']; ?></td>
-                  <td><img src="../../assets/images/<?php echo $row['image']; ?>" alt="Category Image" class="rounded-circle" style="height: 50px; width: 50px"></td>
                   <td><?php echo $row['description']; ?></td>
                   <td>
                     <a href="update.php?id=<?php echo urlencode($row['id']); ?>"><i class="bi bi-pen" style="color: green; padding-right: 15px;"></i></a>

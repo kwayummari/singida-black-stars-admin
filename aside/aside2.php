@@ -17,7 +17,7 @@
           </a>
         </li>
         <li>
-          <a href="../blog/">
+          <a href="../news/">
             <i class="bi bi-circle"></i><span>News</span>
           </a>
         </li>
