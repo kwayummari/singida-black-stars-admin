@@ -21,20 +21,6 @@
             <i class="bi bi-circle"></i><span>News</span>
           </a>
         </li>
-        <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
-        <li>
-          <a href="reports/">
-            <i class="bi bi-circle"></i><span>Reports of abuse</span>
-          </a>
-        </li>
-        <?php endif; ?>
-        <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
-        <li>
-          <a href="categories/">
-            <i class="bi bi-circle"></i><span>Categories</span>
-          </a>
-        </li>
-        <?php endif; ?>
       </ul>
     </li>
   </ul>
