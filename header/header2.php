@@ -1,9 +1,9 @@
 <?php
 session_start();
-$email = $_SESSION['userEmail'];
-$phone = $_SESSION['userPhone'];
-$full_name = $_SESSION['userFullName'];
-$isSeller = $_SESSION['isSeller'];
+$email = 'admin@singidablackstars.com';
+$phone = '0762996305';
+$full_name = 'Kwayu Mmari';
+$isSeller = '1';
 $userId = $_SESSION['userId'];
  ?>
 <header id="header" class="header fixed-top d-flex align-items-center">

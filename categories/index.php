@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['userEmail'], $_SESSION['userPhone'], $_SESSION['userFullName'], $_SESSION['isSeller'], $_SESSION['userId'])) {
-  header("Location: ../../../../index.php");
+if (!isset($_SESSION['userEmail'], $_SESSION['userPhone'], $_SESSION['userId'])) {
+  header("Location: ../index.php");
   exit();
 }
 
@@ -14,7 +14,7 @@ $userId = $_SESSION['userId'];
 include '../connection/index.php';
 
 // Query to select data from the categories table
-$query = "SELECT id, name, description FROM categories";
+$query = "SELECT id, name FROM categories";
 $stmt = $connect->prepare($query);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -38,18 +38,15 @@ $result = $stmt->get_result();
             <thead>
               <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Description</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               <?php
-              // Loop through each category and display its data
               while ($row = $result->fetch_assoc()) {
               ?>
                 <tr>
                   <td><?php echo $row['name']; ?></td>
-                  <td><?php echo $row['description']; ?></td>
                   <td>
                     <a href="update.php?id=<?php echo urlencode($row['id']); ?>"><i class="bi bi-pen" style="color: green; padding-right: 15px;"></i></a>
                   </td>
