@@ -12,34 +12,15 @@
       </a>
       <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="../products/">
-            <i class="bi bi-circle"></i><span>Your Products</span>
-          </a>
-        </li>
-        <li>
-          <a href="../sales/">
-            <i class="bi bi-circle"></i><span>Your sales</span>
-          </a>
-        </li>
-        <li>
-          <a href="../profile/">
-            <i class="bi bi-circle"></i><span>Business profile</span>
-          </a>
-        </li>
-        <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
-        <li>
-          <a href="../reports/">
-            <i class="bi bi-circle"></i><span>Reports of abuse</span>
-          </a>
-        </li>
-        <?php endif; ?>
-        <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
-        <li>
           <a href="../categories/">
             <i class="bi bi-circle"></i><span>Categories</span>
           </a>
         </li>
-        <?php endif; ?>
+        <li>
+          <a href="../blog/">
+            <i class="bi bi-circle"></i><span>News</span>
+          </a>
+        </li>
       </ul>
     </li>
   </ul>
