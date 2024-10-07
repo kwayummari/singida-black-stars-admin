@@ -73,14 +73,6 @@ $result = $stmt->get_result();
                   <label for="categoryName" class="form-label">Category Name</label>
                   <input type="text" class="form-control" id="categoryName" name="categoryName" required>
                 </div>
-                <div class="mb-3">
-                  <label for="categoryImage" class="form-label">Category Image</label>
-                  <input type="file" class="form-control" id="categoryImage" name="categoryImage" required>
-                </div>
-                <div class="mb-3">
-                  <label for="categoryDescription" class="form-label">Category Description</label>
-                  <textarea class="form-control" id="categoryDescription" name="categoryDescription" required></textarea>
-                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
