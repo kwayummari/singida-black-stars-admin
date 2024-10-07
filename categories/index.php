@@ -4,16 +4,12 @@ if (!isset($_SESSION['userEmail'], $_SESSION['userPhone'], $_SESSION['userId']))
   header("Location: ../index.php");
   exit();
 }
-
 $email = $_SESSION['userEmail'];
 $phone = $_SESSION['userPhone'];
 $full_name = $_SESSION['userFullName'];
 $isSeller = $_SESSION['isSeller'];
 $userId = $_SESSION['userId'];
-
 include '../connection/index.php';
-
-// Query to select data from the categories table
 $query = "SELECT id, name FROM categories";
 $stmt = $connect->prepare($query);
 $stmt->execute();
@@ -22,7 +18,6 @@ $result = $stmt->get_result();
 <!DOCTYPE html>
 <html lang="en">
 <?php include "../head/head2.php" ?>
-
 <body>
   <?php include "../header/header2.php" ?>
   <?php include "../aside/aside2.php" ?>
@@ -59,7 +54,6 @@ $result = $stmt->get_result();
           </table>
         </div>
       </div>
-      <!-- Add Category Modal -->
       <div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="addCategoryModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -89,5 +83,4 @@ $result = $stmt->get_result();
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
-
 </html>
